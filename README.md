@@ -26,23 +26,32 @@ pip install mediapipe
 If you're using an Arduino board to control LEDs, install the pyFirmata library:
 
 pip install pyfirmata2
+
 Connect your Arduino to the laptop via USB.
+
 Find your COM port (Windows: Device Manager → Ports).
+
 In controller.py, update:
 
 comport = 'COM10'  # Change it to your correct COM port
+
 5. Run the Code
 Execute the Python script:
 
 python your_script.py
+
 If the camera doesn't start, check:
 
 Your webcam permissions.
+
 Change the camera index in the code:
 
 video = cv2.VideoCapture(1)  # If laptop has multiple cameras
+
 6. Troubleshooting
+
 If "No module named cvzone", reinstall:
 
 pip install --upgrade cvzone
+
 If the camera doesn’t open, ensure it's not being used by another app.
