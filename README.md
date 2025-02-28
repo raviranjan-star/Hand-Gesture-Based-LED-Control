@@ -1,57 +1,89 @@
-To run this hand gesture recognition code on your laptop, follow these steps for the initial setup:
+# Hand Gesture-Based LED Control
 
-1. Install Python (If Not Installed)
-Make sure Python (preferably 3.7+) is installed on your laptop.
-Check the version:
+## 🚀 Getting Started
 
+This project allows you to control LEDs using hand gestures through computer vision and an Arduino board.
+
+---
+
+## 🛠 Prerequisites
+
+Ensure you have the following installed before running the project:
+
+### 1️⃣ Install Python (If Not Installed)
+Check if Python (version **3.7+** recommended) is installed:
+```sh
 python --version
-If not installed, download it from: Python Official Website
+```
+If not installed, [Download Python](https://www.python.org/downloads/).
 
-2. Install Required Libraries
-Your code uses OpenCV, cvzone, and pyFirmata. Install them using:
-
-pip install opencv-python
-pip install cvzone
-pip install pyfirmata2
-If you face issues, try:
-
+### 2️⃣ Install Required Libraries
+Run the following command to install the necessary dependencies:
+```sh
+pip install opencv-python cvzone pyfirmata2
+```
+⚠ If you face OpenCV issues, try:
+```sh
 pip install opencv-python-headless
+```
 
-3. Install MediaPipe (For Hand Tracking)
-Since cvzone uses MediaPipe for hand tracking, install it:
-
+### 3️⃣ Install MediaPipe (For Hand Tracking)
+Since **cvzone** uses **MediaPipe**, install it using:
+```sh
 pip install mediapipe
+```
 
-4. Setup Arduino (If Using LED Control)
-If you're using an Arduino board to control LEDs, install the pyFirmata library:
-
+### 4️⃣ Setup Arduino (For LED Control)
+If you're using an **Arduino** board, install the required library:
+```sh
 pip install pyfirmata2
+```
+- Connect your Arduino via **USB**.
+- Find your **COM port**:
+  - **Windows**: Open *Device Manager* → *Ports*.
+  - **Mac/Linux**: Use `ls /dev/tty*` to find the correct port.
+- Update `controller.py`:
+```python
+comport = 'COM10'  # Replace with your actual COM port
+```
 
-Connect your Arduino to the laptop via USB.
+---
 
-Find your COM port (Windows: Device Manager → Ports).
-
-In controller.py, update:
-
-comport = 'COM10'  # Change it to your correct COM port
-
-5. Run the Code
-Execute the Python script:
-
+## ▶ Running the Project
+Once everything is set up, execute the script:
+```sh
 python your_script.py
+```
 
-If the camera doesn't start, check:
+### 🎥 Camera Issues?
+- Ensure your **webcam permissions** are enabled.
+- If your laptop has multiple cameras, modify the video index:
+```python
+video = cv2.VideoCapture(1)  # Change 1 to 0 or 2 if needed
+```
 
-Your webcam permissions.
+---
 
-Change the camera index in the code:
-
-video = cv2.VideoCapture(1)  # If laptop has multiple cameras
-
-6. Troubleshooting
-
-If "No module named cvzone", reinstall:
-
+## 🔧 Troubleshooting
+### ❌ "No module named cvzone" error?
+Try reinstalling:
+```sh
 pip install --upgrade cvzone
+```
 
-If the camera doesn’t open, ensure it's not being used by another app.
+### 📷 Camera doesn't open?
+- Ensure no other applications are using the webcam.
+- Restart your system and try again.
+
+---
+
+## 🤝 Contributing
+Feel free to fork this repository and improve the project. Pull requests are welcome!
+
+---
+
+## 📩 Contact
+For any queries, reach out via [GitHub Issues](https://github.com/raviranjan-star/Hand-Gesture-Based-LED-Control/issues).
+
+**Happy Coding! 🚀**
+
