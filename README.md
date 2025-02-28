@@ -16,10 +16,12 @@ pip install pyfirmata2
 If you face issues, try:
 
 pip install opencv-python-headless
+
 3. Install MediaPipe (For Hand Tracking)
 Since cvzone uses MediaPipe for hand tracking, install it:
 
 pip install mediapipe
+
 4. Setup Arduino (If Using LED Control)
 If you're using an Arduino board to control LEDs, install the pyFirmata library:
 
